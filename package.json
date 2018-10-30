@@ -24,6 +24,7 @@
     "typescript-babel-jest": "^1.0.5"
   },
   "devDependencies": {
+    "autoprefixer": "^9.3.1",
     "nodemon": "^1.17.5",
     "prettier": "1.14.3",
     "tslint": "^5.11.0",
