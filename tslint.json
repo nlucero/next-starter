@@ -2,7 +2,6 @@
   "defaultSeverity": "error",
   "extends": [
     "tslint-config-airbnb",
-    "tslint:latest",
     "tslint-react",
     "tslint-react-a11y",
     "tslint-config-prettier"
