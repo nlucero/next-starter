@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './posts.scss'
 
 interface IProps {
   postId: number
