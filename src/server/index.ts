@@ -1,6 +1,8 @@
-import { createServer } from 'http'
-import * as next from 'next'
-import { parse } from 'url'
+import next from 'next'
+import express from 'express'
+import bodyParser from 'body-parser'
+import compression from 'compression'
+import helmet from 'helmet'
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
@@ -8,23 +10,24 @@ const app = next({ dev, dir: 'src/client' })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
-  createServer((req, res) => {
-    const parsedUrl = parse(req.url, true)
-    const { pathname, query } = parsedUrl
+  const server = express()
 
-    if (pathname === '/a') {
-      app.render(req, res, '/a', query)
-    } else if (pathname === '/b') {
-      app.render(req, res, '/b', query)
-    } else {
-      handle(req, res, parsedUrl)
-    }
-  }).listen(port, err => {
-    if (err) {
-      throw err
-    }
+  server.use(bodyParser.json())
+  server.use(helmet())
+  server.use(compression())
 
-    /* tslint:disable no-console */
+  server.get('/a', (req, res) => app.render(req, res, '/b', req.query))
+
+  server.get('/b', (req, res) => app.render(req, res, '/a', req.query))
+
+  server.get('/posts/:id', (req, res) =>
+    app.render(req, res, '/posts', { id: req.params.id })
+  )
+
+  server.get('*', (req, res) => handle(req, res))
+
+  server.listen(port, err => {
+    if (err) throw err
     console.log(`> Ready on http://localhost:${port}`)
   })
 })
