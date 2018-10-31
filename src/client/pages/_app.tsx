@@ -16,7 +16,7 @@ class MyApp extends App {
     return {
       pageProps: Component.getInitialProps
         ? await Component.getInitialProps(ctx)
-        : {},
+        : {}
     }
   }
 

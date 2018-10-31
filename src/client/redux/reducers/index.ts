@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import posts from './posts.reducer'
 
 const rootReducer = combineReducers({
-  posts,
+  posts
 })
 
 export default rootReducer

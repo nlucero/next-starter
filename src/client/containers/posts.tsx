@@ -29,11 +29,11 @@ class Posts extends Component<IProps> {
 }
 
 const mapStateToProps = state => ({
-  currentPost: state.posts.currentPost,
+  currentPost: state.posts.currentPost
 })
 
 const mapDispatchToProps = dispatch => ({
-  getPost: id => dispatch(PostsActions.getPost(id)),
+  getPost: id => dispatch(PostsActions.getPost(id))
 })
 
 export default connect(
