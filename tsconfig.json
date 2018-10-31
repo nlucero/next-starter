@@ -16,14 +16,7 @@
     "skipLibCheck": true,
     "rootDir": ".",
     "baseUrl": ".",
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["dom", "es2015", "es2016"],
-    "exclude": [
-      "node_modules",
-      "**/*.spec.ts",
-      "**/*.spec.tsx",
-      "**/*.test.ts",
-      "**/*.test.tsx"
-    ]
+    "typeRoots": ["./node_modules/@types", "src/typings"],
+    "lib": ["dom", "es2015", "es2016"]
   }
 }

@@ -1,3 +1,3 @@
-import React from 'react'
+import A from '../containers/a'
 
-export default () => <div>a</div>
+export default A
