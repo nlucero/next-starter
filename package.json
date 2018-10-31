@@ -5,8 +5,8 @@
     "clean": "rm -rf src/client/.next",
     "start": "NODE_ENV=production ts-node --compilerOptions '{\"module\":\"commonjs\"}' src/server/index.ts",
     "validate": "npm run lint && npm run test",
-    "lint": "tslint -c tslint.json 'src/**/*.ts*'",
-    "lint:fix": "tslint -c tslint.json 'src/**/*.ts*' --fix",
+    "lint": "tslint --project tsconfig.json -c tslint.json 'src/**/*.ts*'",
+    "lint:fix": "npm run lint -- --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
