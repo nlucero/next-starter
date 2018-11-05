@@ -10,7 +10,7 @@
   "rules": {
     "prettier": true,
     "import-name": false,
-    "no-submodule-imports": [true, "next"],
+    "no-submodule-imports": [true, "next", "client", "server"],
     "no-console": true
   },
   "rulesDirectory": ["tslint-plugin-prettier"]

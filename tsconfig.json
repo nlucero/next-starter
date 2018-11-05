@@ -15,8 +15,12 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "rootDir": ".",
-    "baseUrl": ".",
     "typeRoots": ["./node_modules/@types", "src/typings"],
-    "lib": ["dom", "es2015", "es2016"]
+    "lib": ["dom", "es2015", "es2016"],
+    "baseUrl": ".",
+    "paths": {
+      "client/*": ["./src/client/*"],
+      "server/*": ["./src/server/*"]
+    }
   }
 }

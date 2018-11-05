@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { BaseComponent as Posts } from './posts'
+import { BaseComponent as Posts } from 'client/containers/posts'
 
 test('should render', () => {
   const post: MyApp.Post = { id: 1, text: 'text' }

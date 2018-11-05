@@ -1,3 +1,3 @@
-import A from '../containers/a'
+import A from 'client/containers/a'
 
 export default A

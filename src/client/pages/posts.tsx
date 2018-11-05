@@ -1,3 +1,3 @@
-import Posts from '../containers/posts'
+import Posts from 'client/containers/posts'
 
 export default Posts

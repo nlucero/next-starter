@@ -1,4 +1,16 @@
 {
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "client": "./src/client",
+          "server": "./src/server"
+        }
+      }
+    ]
+  ],
   "env": {
     "development": {
       "presets": ["next/babel", "@zeit/next-typescript/babel"]
